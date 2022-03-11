@@ -30,9 +30,7 @@ if(playerInput == '1'){
     playerMove = 'papier';
 } else if(playerInput == '3'){
     playerMove = 'nożyce';
-} else{
-    printMessage('Wprowadziłeś błędną liczbę');
-}
+} 
 
 printMessage('Twój ruch to: ' + playerMove);
 
