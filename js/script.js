@@ -1,3 +1,8 @@
+// points count
+
+let humanWins = 0;
+let computerWins = 0;
+
 function playGame(playerInput) {
 
     clearMessages();
@@ -43,27 +48,39 @@ function playGame(playerInput) {
           console.log('moves:', argComputerMove, argPlayerMove);
   
           if(argComputerMove == 'kamień' && argPlayerMove == 'papier'){ 
-              printMessage('Ty wygrywasz!');
-          } else if(argComputerMove == 'kamień' && argPlayerMove == 'nożyce'){
-              printMessage('Wygrywa komputer');
-          } else if(argComputerMove == 'kamień' && argPlayerMove == 'kamień'){
-              printMessage('Remis');
-          } else if(argComputerMove == 'nożyce' && argPlayerMove == 'papier'){
-              printMessage('Wygrywa komputer');
-          } else if(argComputerMove == 'nożyce' && argPlayerMove == 'kamień'){
-              printMessage('Ty wygrywasz!');
-          } else if(argComputerMove == 'nożyce' && argPlayerMove == 'nożyce'){
-              printMessage('Remis');
-          } else if(argComputerMove == 'papier' && argPlayerMove == 'nożyce'){
-              printMessage('Ty wygrywasz!');
-          } else if(argComputerMove == 'papier' && argPlayerMove == 'kamień'){
-              printMessage('Wygrywa komputer');
-          } else if(argComputerMove == 'papier' && argPlayerMove == 'papier'){
-              printMessage('Remis');
-          } else{printMessage('Wprowadz poprawne dane')}
-      }
+            printMessage('Ty wygrywasz!');
+            humanWins++;
+        } else if(argComputerMove == 'kamień' && argPlayerMove == 'nożyce'){
+            printMessage('Wygrywa komputer');
+            computerWins++;
+        } else if(argComputerMove == 'kamień' && argPlayerMove == 'kamień'){
+            printMessage('Remis');
+        } else if(argComputerMove == 'nożyce' && argPlayerMove == 'papier'){
+            printMessage('Wygrywa komputer');
+            computerWins++;
+        } else if(argComputerMove == 'nożyce' && argPlayerMove == 'kamień'){
+            printMessage('Ty wygrywasz!');
+            humanWins++;
+        } else if(argComputerMove == 'nożyce' && argPlayerMove == 'nożyce'){
+            printMessage('Remis');
+        } else if(argComputerMove == 'papier' && argPlayerMove == 'nożyce'){
+            printMessage('Ty wygrywasz!');
+            humanWins++;
+        } else if(argComputerMove == 'papier' && argPlayerMove == 'kamień'){
+            printMessage('Wygrywa komputer');
+            computerWins++;
+        } else if(argComputerMove == 'papier' && argPlayerMove == 'papier'){
+            printMessage('Remis');
+        } else{printMessage('Wprowadz poprawne dane')}
+    }
   
       displayResult(argComputerMove, argPlayerMove) 
+
+      function pointsCount() {
+        printMessage('Twoje punkty: ' + humanWins + 'Punkty komputera: ' + computerWins);
+        }
+
+      pointsCount()
   
   }
   
